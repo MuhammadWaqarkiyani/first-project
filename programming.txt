@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double math, science, history, english;
+    double maxMarks = 100;
+
+    cout << "Student Grade Management System" << endl;  
+    cout << "--------------------------------" << endl;
+
+    cout << "Enter marks for Mathematics (out of 100): ";
+    cin >> math;
+
+    cout << "Enter marks for Science (out of 100): ";
+    cin >> science;
+
+    cout << "Enter marks for History (out of 100): ";
+    cin >> history;
+
+    cout << "Enter marks for English (out of 100): ";
+    cin >> english;
+
+    double totalMarks = math + science + history + english;
+    double percentage = (totalMarks / (4 * maxMarks)) * 100;
+    string studentGrade;
+
+    // Assigning grade based on percentage
+    if (percentage >= 90) {
+        studentGrade = "A+";
+    } else if (percentage >= 80) {
+        studentGrade = "A";
+    } else if (percentage >= 70) {
+        studentGrade = "B";
+    } else if (percentage >= 60) {
+        studentGrade = "C";
+    } else if (percentage >= 50) {
+        studentGrade = "D";
+    } else {
+        studentGrade = "E";
+    }
+
+    // Displaying the final result
+    cout << "\n\t Final Result " << endl;
+    cout << "---------------------------------" << endl;
+    cout << "Total Marks: " << totalMarks << " / 400" << endl;
+    cout << "Percentage: " << percentage << "%" << endl;
+    cout << "Grade: " << studentGrade << endl;
+
+    // Check if the student passed or failed each subject
+    if (math >= 33 && science >= 33 && history >= 33 && english >= 33) {
+        cout << "Status: Pass" << endl;
+    } else {
+        cout << "Status: Fail" << endl;
+    }
+
+    return 0;
+}
